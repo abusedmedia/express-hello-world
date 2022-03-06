@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
   setInterval(() => {
     console.log(index)
     index++
-    if(index > 120) res.type('html').send(html)
+    if(index > 100) res.type('html').send(html)
   }, 1000)
 });
 
