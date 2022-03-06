@@ -2,7 +2,15 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.get("/", (req, res) => res.type('html').send(html));
+
+app.get("/", (req, res) => {
+  let index = 0
+  setInterval(() => {
+    console.log(index)
+    index++
+    if(index > 120) res.type('html').send(html)
+  }, 1000)
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
